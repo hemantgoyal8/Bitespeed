@@ -10,12 +10,10 @@ CREATE TABLE Contact (
     FOREIGN KEY (linkedId) REFERENCES Contact(id)
 );
 
--- Add indexes for faster lookups (good practice!)
 CREATE INDEX idx_contact_email ON Contact(email);
 CREATE INDEX idx_contact_phonenumber ON Contact(phoneNumber);
 CREATE INDEX idx_contact_linkedid ON Contact(linkedId);
 
--- Optional: Trigger to update `updatedAt` automatically (for PostgreSQL)
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
