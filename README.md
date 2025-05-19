@@ -109,7 +109,7 @@ This project implements a backend service for identity reconciliation as per the
 
 ```json
 {
-  "email": "lorraine@hillvalley.edu",
+  "email": "hemantgoyal@gmail.com",
   "phoneNumber": "123456"
 }
 
@@ -117,7 +117,7 @@ Example Response (for a new contact)
 {
   "contact": {
     "primaryContatctId": 1,
-    "emails": ["lorraine@hillvalley.edu"],
+    "emails": ["hemantgoyal@gmail.com"],
     "phoneNumbers": ["123456"],
     "secondaryContactIds": []
   }
@@ -128,7 +128,7 @@ Example Response (after linking another contact)
 Request:
 
 {
-  "email": "mcfly@hillvalley.edu",
+  "email": "sonamgupta@gmail.com",
   "phoneNumber": "123456"
 }
 
@@ -137,9 +137,9 @@ Response (assuming Lorraine was primary ID 1):
 {
   "contact": {
     "primaryContatctId": 1,
-    "emails": ["lorraine@hillvalley.edu", "mcfly@hillvalley.edu"],
+    "emails": ["hemantgoyal@gmail.com", "sonamgupta@gmail.com"],
     "phoneNumbers": ["123456"],
-    "secondaryContactIds": [2] // Assuming mcfly's record got ID 2
+    "secondaryContactIds": [2] 
   }
 }
 ```
