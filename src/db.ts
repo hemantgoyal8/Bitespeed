@@ -1,4 +1,5 @@
 // src/db.ts (MODIFIED FOR RENDER DEPLOYMENT)
+console.log("RAW DATABASE_URL from env:", process.env.DATABASE_URL);
 import { Pool } from 'pg';
 
 const connectionString = process.env.DATABASE_URL || 'postgres://bitespeed_user:mysecretpassword@localhost:5432/bitespeed_identity_db';
