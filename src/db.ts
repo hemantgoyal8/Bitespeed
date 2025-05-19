@@ -1,17 +1,13 @@
-// src/db.ts
-import { Pool } from 'pg'; // For PostgreSQL
-
-// Configuration for your database connection
-// It's better to use environment variables for these in a real app
+import { Pool } from 'pg'; 
 const pool = new Pool({
-  user: 'postgres', // or your DB user
+  user: 'bitespeed_user', 
   host: 'localhost',
-  database: 'postgres', // or your DB name if you created a specific one
-  password: 'mysecretpassword', // the password you set
+  database: 'bitespeed_identity_db', 
+  password: 'mysecretpassword', 
   port: 5432,
 });
 
-// Test the connection
+
 async function testConnection() {
   try {
     const client = await pool.connect();
@@ -21,14 +17,9 @@ async function testConnection() {
     client.release(); // Release the client back to the pool
   } catch (err) {
     console.error('Error connecting to the database', err);
-  } finally {
-    // Optionally, end the pool if this is just a one-off test script
-    // await pool.end();
-  }
+  } 
 }
 
-// Call it to see if it works
 testConnection();
 
-// Export the pool for other parts of your application to use
 export default pool;
