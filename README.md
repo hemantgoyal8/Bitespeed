@@ -105,34 +105,6 @@ This project implements a backend service for identity reconciliation as per the
     *   `400 Bad Request`: If the request body is invalid (e.g., missing both identifiers, or both are empty/null).
     *   `500 Internal Server Error`: If an unexpected error occurs on the server.
 
-      Deployed Endpoint
-
-The service is deployed on Render.com and can be accessed at:
-
-Endpoint URL: [YOUR_RENDER_APP_URL_HERE]/identify
-
-(Replace [YOUR_RENDER_APP_URL_HERE] with the actual URL provided by Render after deployment, e.g., https://bitespeed-identity-api.onrender.com)
-
-Technology Stack
-Node.js,
-Express.js,
-TypeScript,
-PostgreSQL,
-pg (Node.js PostgreSQL client),
-
-Code Structure
-src/index.ts: Main application file containing the Express server setup, route handler for /identify, and all identity reconciliation logic.
-
-src/db.ts: PostgreSQL database connection pool setup.
-
-package.json: Project dependencies and scripts.
-
-tsconfig.json: TypeScript compiler configuration.
-
-.gitignore: Specifies intentionally untracked files that Git should ignore.
-
-code.sql: Contains the SQL CREATE TABLE statement for the Contact table.
-
 ### Example Request
 
 ```json
@@ -170,5 +142,29 @@ Response (assuming Lorraine was primary ID 1):
     "secondaryContactIds": [2] // Assuming mcfly's record got ID 2
   }
 }
+```
+The service is deployed on Render.com and can be accessed at:
+
+Endpoint URL: https://bitespeed-assignment-hemant.onrender.com/identify
+
+Tech Stack
+Node.js,
+Express.js,
+TypeScript,
+PostgreSQL,
+pg (Node.js PostgreSQL client),
+
+Code Structure
+src/index.ts: Main application file containing the Express server setup, route handler for /identify, and all identity reconciliation logic.
+
+src/db.ts: PostgreSQL database connection pool setup.
+
+package.json: Project dependencies and scripts.
+
+tsconfig.json: TypeScript compiler configuration.
+
+.gitignore: Specifies intentionally untracked files that Git should ignore.
+
+code.sql: Contains the SQL CREATE TABLE statement for the Contact table.
 
 
