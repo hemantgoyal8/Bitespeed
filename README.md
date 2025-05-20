@@ -170,7 +170,7 @@ Response (After both Requests A and B have been sent):
 ```
 The service is deployed on railway.com and can be accessed at: 
 
-Endpoint URL: [https://bitespeed-assignment-hemant.onrender.com/identify](https://bitespeed-production-a229.up.railway.app/identify)
+Endpoint URL: [https://bitespeed-production-a229.up.railway.app/identify]
 
 Tech Stack
 Node.js,
