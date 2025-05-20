@@ -33,7 +33,7 @@ app.post('/identify', async (req: Request, res: Response, next: NextFunction): P
   
 const trimmedEmail = typeof email === 'string' ? email.trim() : null; 
 const isEmailProvided = trimmedEmail !== null && trimmedEmail !== '';
-const isPhoneNumberProvided = typeof requestPhoneNumber === 'string' ? requestPhoneNumber.trim() !== '';
+const isPhoneNumberProvided = typeof requestPhoneNumber === 'string' ? requestPhoneNumber.trim() : !== '';
 
 // check for empty strings too
 if (!isEmailProvided && !isPhoneNumberProvided) {
