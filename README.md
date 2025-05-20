@@ -142,10 +142,35 @@ Response (assuming Lorraine was primary ID 1):
     "secondaryContactIds": [2] 
   }
 }
-```
-The service is deployed on Render.com and can be accessed at:
 
-Endpoint URL: https://bitespeed-assignment-hemant.onrender.com/identify
+Request A:
+
+{
+  "email": "camelCase@Example.COM",
+  "phoneNumber": "777888"
+}
+
+Request B:
+
+{
+  "email": "camelcase@example.com",
+  "phoneNumber": "999000"
+}
+
+Response (After both Requests A and B have been sent):
+
+{
+  "contact": {
+    "primaryContatctId": 10 (or any other number may appear in your case),
+    "emails": ["camelCase@Example.COM"], // Since camelCase@Example.COM has become primary due to being run earlier
+    "phoneNumbers": ["777888", "999000"],
+    "secondaryContactIds": [/* new ID for the second request's record */]
+  }
+}
+```
+The service is deployed on railway.com and can be accessed at: 
+
+Endpoint URL: [https://bitespeed-assignment-hemant.onrender.com/identify](https://bitespeed-production-a229.up.railway.app/identify)
 
 Tech Stack
 Node.js,
