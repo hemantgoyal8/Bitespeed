@@ -29,7 +29,9 @@ app.post('/identify', async (req: Request, res: Response, next: NextFunction): P
     });
     return;
 }
-const isEmailProvided = typeof email === 'string' && email.trim() !== '';
+  
+const trimmedEmail = typeof email === 'string' ? email.trim() : null; 
+const isEmailProvided = trimmedEmail !== null && trimmedEmail !== '';
 const isPhoneNumberProvided = typeof requestPhoneNumber === 'string' && requestPhoneNumber.trim() !== '';
 
 if (!isEmailProvided && !isPhoneNumberProvided) {
@@ -39,8 +41,8 @@ if (!isEmailProvided && !isPhoneNumberProvided) {
     return;
 }
 
-const queryEmail = isEmailProvided ? email : null;
-const queryPhoneNumber = isPhoneNumberProvided ? requestPhoneNumber : null;
+const queryEmail = isEmailProvided ? trimmedEmail.toLowerCase() : null;
+const queryPhoneNumber = isPhoneNumberProvided ? requestPhoneNumber.trim() : null;
 
   const client = await pool.connect(); 
 
